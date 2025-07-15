@@ -1,0 +1,27 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+#include "Generated.xcconfig"
+
+// Performance optimizations for release builds
+ENABLE_BITCODE = NO
+SWIFT_COMPILATION_MODE = wholemodule
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// Prevent concurrent build issues - Release
+DISABLE_MANUAL_TARGET_ORDER_BUILD_WARNING = YES
+CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES
+
+// Swift compatibility
+SWIFT_VERSION = 5.0
+IPHONEOS_DEPLOYMENT_TARGET = 14.0
+
+// Stability and performance settings
+VALIDATE_WORKSPACE = YES
+CLANG_ENABLE_MODULE_DEBUGGING = NO
+ENABLE_PARALLEL_BUILD_IN_XCODE = NO
+BUILD_LIBRARY_FOR_DISTRIBUTION = NO
+DEFINES_MODULE = NO
+VALIDATE_PRODUCT = NO
+
+// Build optimization
+GCC_OPTIMIZATION_LEVEL = s
+SWIFT_OPTIMIZATION_LEVEL = -O

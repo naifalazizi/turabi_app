@@ -1,0 +1,33 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+// Performance optimizations for debug builds
+ENABLE_BITCODE = NO
+SWIFT_COMPILATION_MODE = singlefile
+DEBUG_INFORMATION_FORMAT = dwarf
+
+// Prevent concurrent build issues - Debug
+DISABLE_MANUAL_TARGET_ORDER_BUILD_WARNING = YES
+CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES
+
+// Swift compatibility
+SWIFT_VERSION = 5.0
+IPHONEOS_DEPLOYMENT_TARGET = 14.0
+
+// Debug optimization settings
+GCC_OPTIMIZATION_LEVEL = 0
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+COMPILER_INDEX_STORE_ENABLE = NO
+
+// Stability settings for debug
+VALIDATE_WORKSPACE = YES
+CLANG_ENABLE_MODULE_DEBUGGING = NO
+ENABLE_PARALLEL_BUILD_IN_XCODE = NO
+BUILD_LIBRARY_FOR_DISTRIBUTION = NO
+DEFINES_MODULE = NO
+SWIFT_VERSION = 5.0
+
+// Additional concurrent build prevention
+BUILD_LIBRARY_FOR_DISTRIBUTION = NO
+DEFINES_MODULE = NO
+VALIDATE_PRODUCT = NO

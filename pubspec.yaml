@@ -1,0 +1,92 @@
+name: turabi_app
+description: "تطبيق ترابي - منصة حجز الشاحنات الإنشائية"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # UI Components
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
+  
+  # State Management
+  provider: ^6.1.2
+  get: ^4.6.6
+  
+  # Navigation
+  go_router: ^14.2.7
+  
+  # HTTP & API
+  http: ^1.2.2
+  dio: ^5.7.0
+  
+  # Local Storage (disabled to avoid path_provider issues)
+  # shared_preferences: ^2.3.2
+  # hive: ^2.2.3  # Disabled - may cause issues
+  # hive_flutter: ^1.1.0  # Disabled - may cause issues
+  
+  # Maps & Location
+  google_maps_flutter: ^2.9.0
+  location: ^7.0.0
+  geolocator: ^13.0.1
+  geocoding: ^3.0.0
+  
+  # Image Handling (disabled - causes path_provider issues)
+  # image_picker: ^1.1.2  # Disabled - can cause issues
+  # cached_network_image: ^3.4.1  # Disabled - uses path_provider
+  
+  # Utilities
+  intl: ^0.20.2
+  uuid: ^4.5.1
+  # url_launcher: ^6.3.1  # Disabled - uses path_provider
+  # permission_handler: ^11.3.1  # Disabled - may use path_provider
+  
+  # Firebase (disabled to avoid Swift compilation)
+  # firebase_core: ^3.6.0
+  # firebase_auth: ^5.3.1
+  # cloud_firestore: ^5.4.3
+  # firebase_storage: ^12.3.2
+  
+  # Payment (disabled to avoid Swift compilation)
+  # flutter_stripe: ^11.1.0
+  
+  # Notifications (disabled - may use path_provider)
+  # flutter_local_notifications: ^18.0.1
+  
+  # Animation
+  lottie: ^3.1.2
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  # hive_generator: ^2.0.1  # Disabled with hive
+  # build_runner: ^2.4.13  # Disabled with hive
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+    - assets/fonts/
+  
+  # fonts:
+  #   - family: Cairo
+  #     fonts:
+  #       - asset: assets/fonts/Cairo-Regular.ttf
+  #       - asset: assets/fonts/Cairo-Bold.ttf
+  #         weight: 700
+  #       - asset: assets/fonts/Cairo-SemiBold.ttf
+  #         weight: 600
+

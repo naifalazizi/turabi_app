@@ -1,0 +1,17 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"
+#include "Generated.xcconfig"
+
+// Performance optimizations for profile builds
+ENABLE_BITCODE = NO
+SWIFT_COMPILATION_MODE = wholemodule
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// Prevent concurrent build issues - Profile
+DISABLE_MANUAL_TARGET_ORDER_BUILD_WARNING = YES
+VALIDATE_WORKSPACE = YES
+CLANG_ENABLE_MODULE_DEBUGGING = NO
+ENABLE_PARALLEL_BUILD_IN_XCODE = NO
+BUILD_LIBRARY_FOR_DISTRIBUTION = NO
+DEFINES_MODULE = NO
+VALIDATE_PRODUCT = NO
+SWIFT_VERSION = 5.0
