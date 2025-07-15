@@ -1,0 +1,49 @@
+name: 🚀 Deploy Flutter Web to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐦 Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.34.0'
+        channel: 'beta'
+        
+    - name: 📦 Install Dependencies
+      run: flutter pub get
+      
+    - name: 🧪 Run Tests
+      run: flutter test
+      
+    - name: 🏗️ Build Web App
+      run: |
+        flutter build web --release --web-renderer canvaskit
+        
+    - name: 📋 Copy build files
+      run: |
+        cp -r build/web/* ./docs/
+        
+    - name: 🚀 Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build/web
+        publish_branch: gh-pages
+        force_orphan: true
+        
+    - name: 📱 Add Custom Domain (Optional)
+      run: |
+        echo "# Turabi App - Live Demo" > ./build/web/README.md
+        echo "Access the app at: https://your-username.github.io/turabi_app/" >> ./build/web/README.md
